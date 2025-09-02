@@ -14,7 +14,7 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 110;
         public override string Name { get; set; } = "Expert Scientist";
         public override string Description { get; set; } = "The best scientist in the game you know everthing regard the SCP FOUNDATION.";
-        public override string CustomInfo { get; set; } = "The best scientist in the game you know everthing regard the SCP FOUNDATION.";
+        public override string CustomInfo { get; set; } = " Expert Scientist";
         public override RoleTypeId Role { get; set; } = RoleTypeId.Scientist;
         public override float SpawnChance { get; set; } = 100;
         
@@ -56,6 +56,7 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are an Expert Scientist.");
         }

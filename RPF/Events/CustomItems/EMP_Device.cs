@@ -119,9 +119,9 @@ namespace RPF.Events.CustomItems
                 catch (Exception ex) { Log.Error($"[EMPDevice] ChangeLightsColor restore error: {ex}"); }
                 
                 foreach (var p in Player.List)
-                    p.ShowHint("<color=green>Dispositivi ripristinati.</color>", 5);
+                    p.ShowHint("<color=green>Devices restarted.</color>", 5);
 
-                Cassie.Message("ELETTRONICA RIPRISTINATA.", isNoisy: false, isSubtitles: true);
+                Cassie.Message("ELETRONIC DEVICED RESTARTED.", isNoisy: false, isSubtitles: true);
 
                 Log.Info("[EMPDevice] EMP finished and lights restored.");
             }

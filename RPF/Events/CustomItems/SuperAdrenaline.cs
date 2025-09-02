@@ -11,14 +11,14 @@ namespace RPF.Events.CustomItems
     public class SuperAdrenaline : CustomItem
     {
         public override uint Id { get; set; } = 100;
-        public override string Name { get; set; } = "Super Adrenaline";
-        public override string Description { get; set; } = "Gives you Super Adrenaline";
+        public override string Name { get; set; } = "Silent Adrenaline";
+        public override string Description { get; set; } = "Gives you Silent Walk.";
         public override float Weight { get; set; } = 1.5f;
         public override ItemType Type { get; set; } = ItemType.Adrenaline;
 
         public override SpawnProperties SpawnProperties { get; set; } = new SpawnProperties()
         {
-            Limit = 1,
+            Limit = 5,
             DynamicSpawnPoints = new List<DynamicSpawnPoint>
             {
                 new DynamicSpawnPoint()
@@ -45,16 +45,17 @@ namespace RPF.Events.CustomItems
 
         private void OnPickup(PickingUpItemEventArgs ev)
         {
-            if (ev.Pickup.Type == Type) 
+            if (ev.Pickup.Type != Type)
             {
-                Effects(ev.Player);
-            }    
-            ev.Player.ShowHint("You Have Picked The Super Adrenaline!");
+                return;
+            }
+            ev.Player.ShowHint("You Have Picked The Silent Adrenaline!");
         }
-        
-        private void Effects(Player player)
+
+        public void OnUsing(UsingItemEventArgs ev)
         {
-            player.EnableEffect(EffectType.MovementBoost);
+            ev.Player.EnableEffect(EffectType.SilentWalk); 
+            Log.Debug($"{ev.Player.Nickname} used the silent adrenaline!");
         }
     }
 }

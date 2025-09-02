@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Exiled.API.Enums;
+using Exiled.API.Features.Doors;
 using PluginAPI.Core;
 
 namespace RPF.Events.BroadCast
@@ -10,12 +12,10 @@ namespace RPF.Events.BroadCast
         {
             try
             {
-                for (var i = 60; i >= 0; i--)
                 {
-                    Map.FlickerAllLights(1f);
-                    await Task.Delay(500);
+                    Map.FlickerAllLights(10f);
+                    Door.LockAll(20, DoorLockType.Lockdown079);
                 }
-                
             }
             catch (Exception ex)
             {
@@ -24,21 +24,9 @@ namespace RPF.Events.BroadCast
             
         }
 
-        private static Task CassieBreach()
-        {
-            Cassie.Message(
-                Config.MainBroadCastMessage,
-                isNoisy: false,
-                isSubtitles: true
-            );
-            return Task.CompletedTask;
-        }
-        
-
         public void OnRoundStarted()
         {
             Task.Run(FlickerAllLights);
-            Task.Run(CassieBreach);
         }
 
         public void Register()

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Exiled.API.Extensions;
 using Exiled.API.Features;
 using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
@@ -11,14 +12,14 @@ namespace RPF.Events.RPSCP
         
         public void RegisterEvents()
         {
-            Exiled.Events.Handlers.Player.InteractingDoor += OnInteractingDoor;
+            Exiled.Events.Handlers.Player.InteractingElevator += OnInteractingDoor;
             Exiled.Events.Handlers.Player.ChangingRole += OnChangingRole;
             Exiled.Events.Handlers.Player.Spawning += OnPlayerSpawn;
         }
         
         public void UnregisterEvents()
         {
-            Exiled.Events.Handlers.Player.InteractingDoor -= OnInteractingDoor;
+            Exiled.Events.Handlers.Player.InteractingElevator -= OnInteractingDoor;
             Exiled.Events.Handlers.Player.ChangingRole -= OnChangingRole;
             Exiled.Events.Handlers.Player.Spawning -= OnPlayerSpawn;
         }
@@ -50,21 +51,18 @@ namespace RPF.Events.RPSCP
                 _isRaging.Add(player, value);
         }
         
-        private void OnInteractingDoor(InteractingDoorEventArgs ev)
+        private void OnInteractingDoor(InteractingElevatorEventArgs ev)
         {
             var player = ev.Player;
-            var door = ev.Door;
+            var door = ev.Elevator;
 
             if (player.Role.Type != RoleTypeId.Scp096)
                 return;
 
             bool isRaging = _isRaging.ContainsKey(player) && _isRaging[player];
-
-            if (door.Type.ToString().Contains("Elevator") && !isRaging)
-            {
-                ev.IsAllowed = false;
-                player.ShowHint(Config.ScpRpFunctions096);
-            }
+            
+            ev.IsAllowed = false;
+            player.ShowHint(Main.Instance.Config.ScpRpFunctions096);
         }
     }
 }

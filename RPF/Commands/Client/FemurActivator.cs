@@ -8,8 +8,8 @@ using UnityEngine;
 
 namespace RPF.Commands.Client
 {
-    [CommandHandler(typeof(RemoteAdminCommandHandler))]
-    public class FemourActivator : ICommand
+    [CommandHandler(typeof(ClientCommandHandler))]
+    public class FemurActivator : ICommand
     {
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, [UnscopedRef] out string response)
         {
@@ -22,7 +22,7 @@ namespace RPF.Commands.Client
             
             if (Main.Instance?.FemurBreaker == null)
             {
-                response = "FemurBreaker non inizializzato!";
+                response = "FemurBreaker non initialized.";
                 return false;
             }
             

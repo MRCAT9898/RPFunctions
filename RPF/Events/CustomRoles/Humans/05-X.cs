@@ -14,13 +14,13 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 500;
         public override string Name { get; set; } = "O5-X";
         public override string Description { get; set; } = "You are the O5-X. You are the highest role in the game!";
-        public override string CustomInfo { get; set; } = "O5-X, The most important role in the game!";
+        public override string CustomInfo { get; set; } = "O5-X";
         public override float SpawnChance { get; set; } = 50;
-        public override RoleTypeId Role { get; set; } = RoleTypeId.Scientist;
+        public override RoleTypeId Role { get; set; } = RoleTypeId.Tutorial;
         
         public override List<string> Inventory { get; set; } = new List<string>()
         {
-            "KeycardO5Access",
+            "KeycardO5",
             "Medkit",
             "Radio",
             "Flashlight"
@@ -54,8 +54,10 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are a O5-X!");
+            CustomWeapon.AimBotGun.TryGive(player,"AimBot Gun");
         }
         
     }

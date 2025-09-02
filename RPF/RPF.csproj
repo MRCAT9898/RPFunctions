@@ -139,6 +139,9 @@
         <Reference Include="Pooling">
           <HintPath>..\..\..\Downloads\Dev\Pooling.dll</HintPath>
         </Reference>
+        <Reference Include="SCPSLAudioApi">
+          <HintPath>..\..\..\Downloads\SCPSLAudioApi.dll</HintPath>
+        </Reference>
         <Reference Include="Snake">
           <HintPath>..\..\..\Downloads\Dev\Snake.dll</HintPath>
         </Reference>
@@ -529,15 +532,15 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Commands\Client\FemourActivator.cs" />
+        <Compile Include="Commands\Client\FemurActivator.cs" />
         <Compile Include="Commands\Client\Hack.cs" />
         <Compile Include="Commands\Client\Overload.cs" />
         <Compile Include="Commands\Client\Scientist.cs" />
         <Compile Include="Commands\RA\Info.cs" />
         <Compile Include="Commands\RA\OmegaWarhead.cs" />
         <Compile Include="Config.cs" />
+        <Compile Include="Events\914Event\Kill914.cs" />
         <Compile Include="Events\BroadCast\BroadcastBreach.cs" />
-        <Compile Include="Events\BroadCast\ScpCastSpecific.cs" />
         <Compile Include="Events\CustomItems\EMP_Device.cs" />
         <Compile Include="Events\CustomItems\SuperAdrenaline.cs" />
         <Compile Include="Events\CustomRoles\Humans\05-X.cs" />
@@ -547,13 +550,16 @@
         <Compile Include="Events\CustomRoles\Humans\Scientist Pro.cs" />
         <Compile Include="Events\CustomRoles\Humans\SiteManager.cs" />
         <Compile Include="Events\CustomRoles\Humans\Tech Pro.cs" />
+        <Compile Include="Events\CustomWeapon\AimBotGun.cs" />
+        <Compile Include="Events\CustomWeapon\MediGun.cs" />
         <Compile Include="Events\Misc\FemurBreaker.cs" />
-        <Compile Include="Events\Misc\PickupCandy.cs" />
         <Compile Include="Events\RPSCP\RP096.cs" />
         <Compile Include="Events\RPSCP\RP106.cs" />
         <Compile Include="Events\RPSCP\RP939.cs" />
+        <Compile Include="Events\TeslaGate\TeslaConditions.cs" />
         <Compile Include="Main.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="SettingsSpecific\SSS.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />
@@ -561,6 +567,14 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="bin\Debug\RPF.dll" />
+      <Content Include="Images\Overload.png" />
+      <Content Include="Images\ExcapeTool.png" />
+      <Content Include="Images\OmegaWarhead.png" />
+      <Content Include="Images\CIClass-D.png" />
+      <Content Include="Images\RPFBanner.jpg" />
+      <Content Include="Images\SiteManager.png" />
+      <Content Include="Images\SuperAdrenaline.png" />
+      <Content Include="Images\Emp_Device.png" />
       <Content Include="Readme.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

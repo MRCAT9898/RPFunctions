@@ -58,7 +58,7 @@ namespace RPF.Commands.Client
                 Map.ChangeColorOfAllLights(Color.red);
                 await Task.Delay(500);
                 Cassie.Message(
-                    Config.HackCommandCassieHacked,
+                    Main.Instance.Config.HackCommandCassieHacked,
                     isNoisy: false,
                     isSubtitles: true
                 );
@@ -76,7 +76,7 @@ namespace RPF.Commands.Client
                 Map.ChangeColorOfAllLights(Color.yellow);
                 await Task.Delay(500);
                 Cassie.Message(
-                    Config.HackCommandCassieResolving,
+                    Main.Instance.Config.HackCommandCassieResolving,
                     isNoisy: false,
                     isSubtitles: true
                 );
@@ -94,7 +94,7 @@ namespace RPF.Commands.Client
                 Map.ChangeColorOfAllLights(Color.magenta);
                 await Task.Delay(500);
                 Cassie.Message(
-                    Config.HackCommandCassieFinalMessage,
+                    Main.Instance.Config.HackCommandCassieFinalMessage,
                     isNoisy: false,
                     isSubtitles: true
                 );
@@ -107,8 +107,8 @@ namespace RPF.Commands.Client
         
         private static bool _usedThisRound = false;
         
-        public string Command => ".Hack";
-        public string[] Aliases => [".hack"];
+        public string Command => "Hack";
+        public string[] Aliases => ["hack"];
         public string Description => "Hacks the entire Facily";
     }
 }

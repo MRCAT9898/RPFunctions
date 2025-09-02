@@ -30,7 +30,7 @@ namespace RPF.Commands.Client
             
             response = "Command received.";
             player.Broadcast(10,
-                Config.ScientistInstructions,
+                Main.Instance.Config.ScientistInstructions,
                 Broadcast.BroadcastFlags.Normal,
                 false);
             player.AddItem(ItemType.KeycardFacilityManager);
@@ -39,7 +39,7 @@ namespace RPF.Commands.Client
         
         private static bool _usedThisRound = false;
 
-        public string Command => ".excapeTool";
+        public string Command => "excapeTool";
         public string[] Aliases => ["excapeTool"];
         public string Description => "A Scientist Can Excape the facility";
     }

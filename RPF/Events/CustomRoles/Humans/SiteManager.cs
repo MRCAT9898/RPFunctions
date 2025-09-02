@@ -14,7 +14,7 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 100;
         public override string Name { get; set; } = "Site Manager";
         public override string Description { get; set; } = "The Manger of the Site!";
-        public override string CustomInfo { get; set; } = "The Manger of the Site!";
+        public override string CustomInfo { get; set; } = "Site Manager";
         public override RoleTypeId Role { get; set; } = RoleTypeId.Scientist;
         public override float SpawnChance { get; set; } = 100;
 
@@ -54,6 +54,7 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are a FacilityManager.");
         }

@@ -1,4 +1,5 @@
-﻿using Exiled.Events.EventArgs.Player;
+﻿using Exiled.API.Extensions;
+using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
 
 namespace RPF.Events.RPSCP
@@ -19,10 +20,10 @@ namespace RPF.Events.RPSCP
         {
             if (ev.Player.Role.Type == RoleTypeId.Scp106)
             {
-                if (!ev.Door.Type.ToString().Contains("Elevator"))
+                if (!ev.Door.Type.IsElevator())
                 {
                     ev.IsAllowed = false;
-                    ev.Player.ShowHint(Config.ScpRpFunctions106);
+                    ev.Player.ShowHint(Main.Instance.Config.ScpRpFunctions106);
                 }
             }
         }

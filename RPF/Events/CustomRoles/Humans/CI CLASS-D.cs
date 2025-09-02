@@ -14,7 +14,7 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 100;
         public override string Name { get; set; } = "CI CLASS D";
         public override string Description { get; set; } = "You are a CI Employee and you know everything on the facility.";
-        public override string CustomInfo { get; set; } = "You are a CI Employee and you know everything on the facility.";
+        public override string CustomInfo { get; set; } = "Class-D";
         public override RoleTypeId Role { get; set; } = RoleTypeId.ClassD;
         public override float SpawnChance { get; set; } = 100;
         
@@ -53,6 +53,7 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are a CI CLASS-D. shhh...");
         }

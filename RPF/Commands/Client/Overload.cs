@@ -65,7 +65,7 @@ namespace RPF.Commands.Client
                     Map.ChangeColorOfAllLights(Color.red);
                     await Task.Delay(500);
                     Cassie.Message(
-                        Config.Overload079Cassie,
+                        Main.Instance.Config.Overload079Cassie,
                         isNoisy: false,
                         isSubtitles: true
                         );
@@ -79,8 +79,8 @@ namespace RPF.Commands.Client
         
         private static bool _usedThisRound = false;
         
-        public string Command => ".Overload";
-        public string[] Aliases => [".Overload"];
+        public string Command => "Overload";
+        public string[] Aliases => ["Overload"];
         public string Description => "Command for 079";
     }
 }

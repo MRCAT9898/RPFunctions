@@ -171,3 +171,4 @@ C:\Users\ciste\RiderProjects\RPF\RPF\obj\Debug\RPF.csproj.CoreCompileInputs.cach
 C:\Users\ciste\RiderProjects\RPF\RPF\obj\Debug\RPF.csproj.Up2Date
 C:\Users\ciste\RiderProjects\RPF\RPF\obj\Debug\RPF.dll
 C:\Users\ciste\RiderProjects\RPF\RPF\obj\Debug\RPF.pdb
+C:\Users\ciste\RiderProjects\RPF\RPF\bin\Debug\SCPSLAudioApi.dll

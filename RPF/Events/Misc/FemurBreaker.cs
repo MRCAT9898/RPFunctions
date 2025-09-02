@@ -166,7 +166,7 @@ namespace RPF.Events.Misc
 
             if (!_doorUnlockedByGenerators && CountActiveGenerators() < _config.GeneratorsRequired)
             {
-                ev.Player.ShowHint("<color=red>La cella è bloccata: attiva tutti i generatori!</color>", 3);
+                ev.Player.ShowHint("<color=red>The cell is Blocked! Activate all Generators!</color>", 3);
                 ev.IsAllowed = false;
                 return;
             }

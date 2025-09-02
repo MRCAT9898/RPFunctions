@@ -1,4 +1,5 @@
-﻿using Exiled.Events.EventArgs.Player;
+﻿using Exiled.API.Extensions;
+using Exiled.Events.EventArgs.Player;
 using PlayerRoles;
 
 namespace RPF.Events.RPSCP
@@ -7,23 +8,20 @@ namespace RPF.Events.RPSCP
     {
         public void RegisterEvents()
         {
-            Exiled.Events.Handlers.Player.InteractingDoor += OnInteractingDoor;
+            Exiled.Events.Handlers.Player.InteractingElevator += OnInteractingDoor;
         }
 
         public void UnregisterEvents()
         {
-            Exiled.Events.Handlers.Player.InteractingDoor -= OnInteractingDoor;
+            Exiled.Events.Handlers.Player.InteractingElevator -= OnInteractingDoor;
         }
 
-        private void OnInteractingDoor(InteractingDoorEventArgs ev)
+        private void OnInteractingDoor(InteractingElevatorEventArgs ev)
         {
             if (ev.Player.Role.Type == RoleTypeId.Scp939)
             {
-                if (ev.Door.Type.ToString().Contains("Elevator"))
-                {
-                    ev.IsAllowed = false;
-                    ev.Player.ShowHint(Config.ScpRpFunctions939);
-                }
+                ev.IsAllowed = false;
+                ev.Player.ShowHint(Main.Instance.Config.ScpRpFunctions939);
             }
         }
     }

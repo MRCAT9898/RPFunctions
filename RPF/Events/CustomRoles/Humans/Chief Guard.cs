@@ -14,13 +14,14 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 120;
         public override string Name { get; set; } = "Chief Guard";
         public override string Description { get; set; } = "Lead your Guard team to Victory!";
-        public override string CustomInfo { get; set; } = "Lead your Guard team to Victory!";
+        public override string CustomInfo { get; set; } = "Chief Guard";
         public override RoleTypeId Role { get; set; } = RoleTypeId.FacilityGuard;
         public override float SpawnChance { get; set; } = 100;
         
         public override List<string> Inventory { get; set; } = new List<string>()
         {
             "KeycardMTFPrivate",
+            "MediGun",
             "COM15",
             "9x19mm",
             "Medkit",
@@ -56,6 +57,7 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are a Chief Guard.");
         }

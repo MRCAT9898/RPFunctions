@@ -14,7 +14,7 @@ namespace RPF.Events.CustomRoles.Humans
         public override int MaxHealth { get; set; } = 100;
         public override string Name { get; set; } = "Tech Pro";
         public override string Description { get; set; } = "You are a technician! you know every room of the game!";
-        public override string CustomInfo { get; set; } = "You are a technician! you know every room of the game!";
+        public override string CustomInfo { get; set; } = " Pro technician";
         public override float SpawnChance { get; set; } = 75;
         public override RoleTypeId Role { get; set; } = RoleTypeId.NtfPrivate;
         public override List<string> Inventory { get; set; } = new List<string>()
@@ -54,6 +54,7 @@ namespace RPF.Events.CustomRoles.Humans
 
         public override void AddRole(Player player)
         {
+            if (!SSS.SSS.IsCustomRolesAllowed[player]) return;
             base.AddRole(player);
             player.Broadcast(10, "You are a Expert Technician.");
         }
