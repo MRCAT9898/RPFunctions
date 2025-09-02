@@ -32,7 +32,7 @@ namespace RPF
         public override string Name { get; } = "RPFunctions";
         public override string Author { get; } = "Mr.Cat, FIXI50000";
         public override string Prefix { get; } = "RPF";
-        public override Version Version { get; } = new Version(1, 0, 0);
+        public override Version Version { get; } = new Version(1, 1, 0);
         public override Version RequiredExiledVersion { get; } = new Version(9, 8, 1);
         public override PluginPriority Priority { get; } = PluginPriority.Medium;
         
