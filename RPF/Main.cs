@@ -5,6 +5,7 @@ using Exiled.CustomItems.API;
 using Exiled.CustomItems.API.Features;
 using Exiled.CustomRoles.API;
 using Exiled.CustomRoles.API.Features;
+using Exiled.Events.EventArgs.Player;
 using RPF.Events._914Event;
 using RPF.Events.BroadCast;
 using RPF.Events.CustomItems;
@@ -22,7 +23,6 @@ namespace RPF
         private NoDoorsFor106 _noDoorsFor10;
         private NoElevatorFor939 _noElevatorFor939;
         private TeslaConditions _teslaGate;
-        private SSS.SSS _sss;
         private Kill914 _kill914;
         public static Main Instance { get; private set; }
         public FemurBreakerEvent FemurBreaker { get; private set; }
@@ -62,7 +62,6 @@ namespace RPF
             _kill914 = new Kill914();
             _kill914.Register();
             
-            SSS.SSS.Register();
             new SuperAdrenaline().Register();
             new SiteManager().Register();
             new O5X().Register();
@@ -83,7 +82,6 @@ namespace RPF
 
         public override void OnDisabled()
         {
-            SSS.SSS.Unregister();
             CustomItem.UnregisterItems();
             EMP_Device.UnregisterItems();
             SuperAdrenaline.UnregisterItems();

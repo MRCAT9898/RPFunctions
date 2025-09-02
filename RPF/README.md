@@ -50,7 +50,6 @@ For support, email: sigmapurgatorium12@outlook.it or server Exiled.
 
 - [@MRCAT9898](https://www.github.com/MRCAT9898)
 - [@FIXI50000](https://www.github.com/FIXI50000)
-- [@Soldier](https://www.github.com/Soldier98dc)
 
 
 ## License

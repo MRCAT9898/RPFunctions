@@ -23,7 +23,6 @@ namespace RPF.Events.CustomRoles.Humans
             "KeycardScientist",
             "Medkit",
             "Adrenaline",
-            "SuperAdrenaline", 
             "Flashlight",
             "Radio"
         };
@@ -57,8 +56,6 @@ namespace RPF.Events.CustomRoles.Humans
         public override void AddRole(Player player)
         {
             //Patched: in 1.2.0
-            if (!SSS.SSS.IsCustomRolesAllowed.TryGetValue(player.UserId, out bool isAllowed) || !isAllowed)
-                return;
             base.AddRole(player);
             player.Broadcast(10, "You are an Expert Scientist.");
         }
