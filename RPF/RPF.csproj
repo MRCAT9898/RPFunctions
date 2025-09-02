@@ -575,7 +575,7 @@
       <Content Include="Images\SiteManager.png" />
       <Content Include="Images\SuperAdrenaline.png" />
       <Content Include="Images\Emp_Device.png" />
-      <Content Include="Readme.md" />
+      <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
