@@ -18,7 +18,7 @@ namespace hcassie
 
         public string Command => "hack";
         public string[] Aliases => new[] { ".hack" };
-        public string Description => "Avvia un timer di 60s e annuncia il completamento.";
+        public string Description => "Activate a timer of 60 seconds every time the hack command is executed";
 
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, out string response)
         {
