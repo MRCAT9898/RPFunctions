@@ -1,5 +1,5 @@
 # RPFunctions Plugin.
-![RPFBanner.jpg](./Images/RPFBanner.jpg)
+![RPFBanner.jpg](./RPF/Images/RPFBanner.jpg)
 An new Exiled Plugin By Mr.Cat and FIXI50000 😉
 
 
