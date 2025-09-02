@@ -45,6 +45,7 @@ namespace RPF.Events.CustomItems
 
         private void OnPickup(PickingUpItemEventArgs ev)
         {
+            //patched: In 1.1.0
             if (!Check(ev.Pickup)) return;
             ev.Player.ShowHint("You Have Picked The Silent Adrenaline!");
         }

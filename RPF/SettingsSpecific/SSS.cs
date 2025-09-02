@@ -9,7 +9,9 @@ namespace SSS
     {
         internal static IEnumerable<SettingBase> _settings;
         internal static IEnumerable<string> _dropdownInputs;
-        public static Dictionary<Player, bool> IsCustomRolesAllowed = new Dictionary<Player, bool>();
+        //Patched: 1.2.0
+        public static Dictionary<string, bool> IsCustomRolesAllowed = new Dictionary<string, bool>();
+
 
         public static void Register()
         {
@@ -32,14 +34,15 @@ namespace SSS
 
         public void TwoButtonExample(Player player)
         {
+            //patched: in 1.2.0
             SSTwoButtonsSetting twoButtonsSetting = ServerSpecificSettingsSync.GetSettingOfUser<SSTwoButtonsSetting>(player.ReferenceHub, 22);
             if (twoButtonsSetting.SyncIsA)
             {
-                IsCustomRolesAllowed[player] = false;
+                IsCustomRolesAllowed[player.UserId] = true;
             }
             else if (twoButtonsSetting.SyncIsB)
             {
-                IsCustomRolesAllowed[player] = true;
+                IsCustomRolesAllowed[player.UserId] = false;
             }
         }
 
