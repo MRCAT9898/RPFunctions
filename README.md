@@ -9,7 +9,7 @@ An new Exiled Plugin By Mr.Cat and FIXI50000 😉
 is 100% RolePlay! The Config very argumented for your
 customification!**
 
-**This Plugin Specifically add these things to your Server:
+This Plugin Specifically add these things to your Server:
 
 - Custom Breach On round started
 - Custom Events for Better Content
@@ -22,7 +22,7 @@ customification!**
 - Custom Weapons!
 - Tesla Gate Conditions!
 - 914 Event (Kill when player enter in 914 and when it activated The player get killed.)
-- SSS for max costumation.**
+- SSS for max costumation.
 
 ## Screenshots:
 ### Omega Warhead:
