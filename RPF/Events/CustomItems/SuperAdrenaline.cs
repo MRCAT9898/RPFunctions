@@ -45,10 +45,7 @@ namespace RPF.Events.CustomItems
 
         private void OnPickup(PickingUpItemEventArgs ev)
         {
-            if (ev.Pickup.Type != Type)
-            {
-                return;
-            }
+            if (!Check(ev.Pickup)) return;
             ev.Player.ShowHint("You Have Picked The Silent Adrenaline!");
         }
 

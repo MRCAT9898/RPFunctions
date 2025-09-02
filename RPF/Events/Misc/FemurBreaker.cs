@@ -190,7 +190,7 @@ namespace RPF.Events.Misc
             var scp106 = Player.List.FirstOrDefault(p => p.IsAlive && p.Role.Type == RoleTypeId.Scp106);
             if (scp106 != null)
             {
-                scp106.Kill("Neutralizzato dal Femur Breaker");
+                scp106.Kill("Killed by FemurBreaker");
                 Log.Info("[FemurBreaker] SCP-106 neutralized.");
             }
 

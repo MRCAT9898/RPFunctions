@@ -21,11 +21,6 @@ namespace RPF
 
         public static string FemurBreakerCassie { get; set; } = "<b><color=red>Femur Breaker Actived . . .</color></b>";
         
-        [Description("------------------------- Hack Command ---------------------")]
-        public string HackCommandCassieHacked { get; set; } = "<b><color=red>Error... Error... Hacking Event Occurred ...</color></b>";
-        public string HackCommandCassieResolving { get; set; } = "<b><color=green>Resolving... Hacking Succeded</color></b>";
-        public string HackCommandCassieFinalMessage { get; set; } = "<b><color=red>SCP FOUNDATION IS UNDER DELTA COMMAND CONTROL...</color></b>";
-        
         [Description("------------------------ Overload Command ---------------------")]
         public string Overload079Cassie { get; set; } = "Overload... Completed...";
         

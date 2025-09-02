@@ -108,7 +108,7 @@ namespace RPF.Events.CustomItems
                     if (ct.IsCancellationRequested) break;
 
                     foreach (var p in Player.List)
-                        p.ShowHint($"<color=red>EMP attivo — ripristino tra: {remaining}s</color>", 1);
+                        p.ShowHint($"<color=red>EMP active - recharging in: {remaining}s</color>", 1);
 
                     try { await Task.Delay(1000, ct); }
                     catch (TaskCanceledException) { break; }

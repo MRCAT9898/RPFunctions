@@ -58,12 +58,14 @@ namespace RPF.Commands.Client
                     isSubtitles: true
                 );
                 await Task.Delay(3000);
-                Map.ChangeLightsColor(Color.green);
                 Cassie.Message(
                     "SCP 106 SUCCEFULLY TERMINATED",
                     isNoisy: false,
                     isSubtitles: true
                 );
+                Map.ChangeLightsColor(Color.green);
+                await Task.Delay(1000);
+                Map.ChangeLightsColor(Color.white);
             }
             catch (Exception ex)
             {
@@ -71,8 +73,8 @@ namespace RPF.Commands.Client
             }
         }
         
-        public string Command { get; } = ".femour";
-        public string[] Aliases { get; } = [ "femour" ];
-        public string Description { get; } = "Activate Femour Event.";
+        public string Command { get; } = ".femur";
+        public string[] Aliases { get; } = [ "femur" ];
+        public string Description { get; } = "Activate Femur Event.";
     }    
 }
