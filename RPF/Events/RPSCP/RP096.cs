@@ -26,6 +26,7 @@ namespace RPF.Events.RPSCP
         
         private void OnPlayerSpawn(SpawningEventArgs ev)
         {
+            if (Main.Instance.Config.enable_096_functions != true) return;
             if (_isRaging.ContainsKey(ev.Player))
                 _isRaging[ev.Player] = false;
             else
@@ -34,6 +35,7 @@ namespace RPF.Events.RPSCP
         
         private void OnChangingRole(ChangingRoleEventArgs ev)
         {
+            if (Main.Instance.Config.enable_096_functions != true) return;
             if (ev.NewRole == RoleTypeId.Scp096)
             {
                 if (_isRaging.ContainsKey(ev.Player))
@@ -45,6 +47,7 @@ namespace RPF.Events.RPSCP
         
         public void SetRage(Player player, bool value)
         {
+            if (Main.Instance.Config.enable_096_functions != true) return;
             if (_isRaging.ContainsKey(player))
                 _isRaging[player] = value;
             else
@@ -53,6 +56,7 @@ namespace RPF.Events.RPSCP
         
         private void OnInteractingDoor(InteractingElevatorEventArgs ev)
         {
+            if (Main.Instance.Config.enable_096_functions != true) return;
             var player = ev.Player;
             var door = ev.Elevator;
 

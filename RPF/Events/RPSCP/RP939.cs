@@ -18,6 +18,7 @@ namespace RPF.Events.RPSCP
 
         private void OnInteractingDoor(InteractingElevatorEventArgs ev)
         {
+            if (Main.Instance.Config.enable_939_functions)
             if (ev.Player.Role.Type == RoleTypeId.Scp939)
             {
                 ev.IsAllowed = false;

@@ -44,7 +44,7 @@ namespace RPF.Commands.Client
 
         private static async Task FlickerLights()
         {
-            {
+            if (Main.Instance.Config.EnableOverloadCommand != true) return;
                 try
                 {
                     Map.FlickerAllLights(5f);
@@ -54,12 +54,11 @@ namespace RPF.Commands.Client
                 {
                     Log.Error($"[FlickerLights] error in executing command: {ex}");
                 }
-            }
         }
 
         private static async Task LightsColor()
         {
-            {
+            if (Main.Instance.Config.EnableOverloadCommand != true) return;
                 try
                 {
                     Map.ChangeColorOfAllLights(Color.red);
@@ -74,12 +73,12 @@ namespace RPF.Commands.Client
                 {
                     Log.Error($"[DoorLocksColor] error in executing command: {ex}");
                 }
-            }
+            
         }
         
         private static bool _usedThisRound = false;
         
-        public string Command => "Overload";
+        public string Command => Main.Instance.Config.OverloadCommand;
         public string[] Aliases => ["Overload"];
         public string Description => "Command for 079";
     }

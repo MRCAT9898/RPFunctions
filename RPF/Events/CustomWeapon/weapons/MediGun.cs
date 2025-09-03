@@ -20,8 +20,6 @@ public class MediGun : Exiled.CustomItems.API.Features.CustomWeapon
     public override Vector3 Scale { get; set; } = new Vector3(1f, 1f, 1f);
     public override SpawnProperties SpawnProperties { get; set; } = new SpawnProperties();
     public override float Damage { get; set; } = 0;
-        
-        
 
 
     protected override void SubscribeEvents()

@@ -73,7 +73,7 @@ namespace RPF.Commands.Client
             }
         }
         
-        public string Command { get; } = ".femur";
+        public string Command { get; } = Main.Instance.Config.femur_command;
         public string[] Aliases { get; } = [ "femur" ];
         public string Description { get; } = "Activate Femur Event.";
     }    

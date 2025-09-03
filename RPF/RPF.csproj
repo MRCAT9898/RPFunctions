@@ -43,8 +43,10 @@
         <Compile Include="Config.cs" />
         <Compile Include="Events\914Event\Kill914.cs" />
         <Compile Include="Events\BroadCast\BroadcastBreach.cs" />
-        <Compile Include="Events\CustomItems\EMP_Device.cs" />
-        <Compile Include="Events\CustomItems\SuperAdrenaline.cs" />
+        <Compile Include="Events\CustomItems\CustomItemsHandler.cs" />
+        <Compile Include="Events\CustomItems\Items\EMP_Device.cs" />
+        <Compile Include="Events\CustomItems\Items\SuperAdrenaline.cs" />
+        <Compile Include="Events\CustomRoles\CustomRoleHandler.cs" />
         <Compile Include="Events\CustomRoles\Humans\05-X.cs" />
         <Compile Include="Events\CustomRoles\Humans\Chief Guard.cs" />
         <Compile Include="Events\CustomRoles\Humans\CI CLASS-D.cs" />
@@ -52,15 +54,16 @@
         <Compile Include="Events\CustomRoles\Humans\Scientist Pro.cs" />
         <Compile Include="Events\CustomRoles\Humans\SiteManager.cs" />
         <Compile Include="Events\CustomRoles\Humans\Tech Pro.cs" />
-        <Compile Include="Events\CustomWeapon\AimBotGun.cs" />
-        <Compile Include="Events\CustomWeapon\MediGun.cs" />
+        <Compile Include="Events\CustomWeapon\WeaponHandler.cs" />
+        <Compile Include="Events\CustomWeapon\weapons\AimBotGun.cs" />
+        <Compile Include="Events\CustomWeapon\weapons\MediGun.cs" />
         <Compile Include="Events\Misc\FemurBreaker.cs" />
         <Compile Include="Events\RPSCP\RP096.cs" />
         <Compile Include="Events\RPSCP\RP106.cs" />
         <Compile Include="Events\RPSCP\RP939.cs" />
         <Compile Include="Events\TeslaGate\TeslaConditions.cs" />
         <Compile Include="Main.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />

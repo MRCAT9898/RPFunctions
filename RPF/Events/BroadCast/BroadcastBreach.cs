@@ -27,6 +27,7 @@ namespace RPF.Events.BroadCast
 
         public void OnRoundStarted()
         {
+            if (Main.Instance.Config.Start_Annoucment != true) return;
             FlickerAllLights();
         }
 

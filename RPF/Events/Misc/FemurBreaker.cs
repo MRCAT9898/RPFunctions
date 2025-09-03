@@ -180,8 +180,6 @@ namespace RPF.Events.Misc
 
         public async Task RunFemurBreaker()
         {
-            _isRunning = true;
-
             Log.Info("[FemurBreaker] Activated: playing ambient sound.");
             Map.PlayAmbientSound(28);
 
@@ -194,7 +192,7 @@ namespace RPF.Events.Misc
                 Log.Info("[FemurBreaker] SCP-106 neutralized.");
             }
 
-            _isRunning = true;
+            if (Main.Instance.Config.EnableFemurBreaker != true) return;
         }
     }
 }

@@ -9,9 +9,12 @@ using Exiled.Events.EventArgs.Player;
 using RPF.Events._914Event;
 using RPF.Events.BroadCast;
 using RPF.Events.CustomItems;
+using RPF.Events.CustomRoles;
 using RPF.Events.CustomRoles.Humans;
+using RPF.Events.CustomWeapon;
 using RPF.Events.Misc;
 using RPF.Events.RPSCP;
+using RPF.Events.TeslaGate;
 using UnityEngine;
 
 namespace RPF
@@ -24,6 +27,9 @@ namespace RPF
         private NoElevatorFor939 _noElevatorFor939;
         private TeslaConditions _teslaGate;
         private Kill914 _kill914;
+        private CustomRoleHandler _customRoleHandler;
+        private CustomItemsHandler _customItemsHandler;
+        private WeaponHandler _weaponHandler;
         public static Main Instance { get; private set; }
         public FemurBreakerEvent FemurBreaker { get; private set; }
 
@@ -32,7 +38,7 @@ namespace RPF
         public override string Name { get; } = "RPFunctions";
         public override string Author { get; } = "Mr.Cat, FIXI50000";
         public override string Prefix { get; } = "RPF";
-        public override Version Version { get; } = new Version(1, 2, 0);
+        public override Version Version { get; } = new Version(1, 3, 0);
         public override Version RequiredExiledVersion { get; } = new Version(9, 8, 1);
         public override PluginPriority Priority { get; } = PluginPriority.Medium;
         
@@ -42,6 +48,7 @@ namespace RPF
             Instance = this;
             
             CustomItem.RegisterItems();
+            CustomWeapon.RegisterItems();
             CustomRole.RegisterRoles(true, this);
             
             _broadcast = new BroadCastBreach();
@@ -56,23 +63,23 @@ namespace RPF
             _scp096ElevatorRestriction = new Scp096ElevatorRestriction();
             _scp096ElevatorRestriction.RegisterEvents();
             
+            _teslaGate = new RPF.Events.TeslaGate.TeslaConditions();
+            _teslaGate.Register();
+            
             FemurBreaker = new Events.Misc.FemurBreakerEvent(Config);
             FemurBreaker.Register();
             
             _kill914 = new Kill914();
             _kill914.Register();
             
-            new SuperAdrenaline().Register();
-            new SiteManager().Register();
-            new O5X().Register();
-            new Chief_Guard().Register();
-            new CI_CLASS_D().Register();
-            new Expert_Guard().Register();
-            new Scientist_Pro().Register();
-            new Tech_Pro().Register();
-            new EMP_Device().Register();
-            CustomWeapon.RegisterItems();
+            _customRoleHandler = new CustomRoleHandler();
+            _customRoleHandler.Register();
+            
+            _customItemsHandler = new CustomItemsHandler();
+            _customItemsHandler.Register();
 
+            _weaponHandler = new WeaponHandler();
+            _weaponHandler.Register();
             
             Debug.Log("Registered RPF Items and Roles");
             Debug.Log("RPF enabled");
@@ -82,25 +89,17 @@ namespace RPF
 
         public override void OnDisabled()
         {
-            CustomItem.UnregisterItems();
-            EMP_Device.UnregisterItems();
-            SuperAdrenaline.UnregisterItems();
-            SiteManager.UnregisterRoles();
-            CustomItem.UnregisterItems();
-            CustomRole.UnregisterRoles();
-            O5X.UnregisterRoles();
-            Chief_Guard.UnregisterRoles();
-            CI_CLASS_D.UnregisterRoles();
-            Expert_Guard.UnregisterRoles();
-            Scientist_Pro.UnregisterRoles();
-            Tech_Pro.UnregisterRoles();
+            _customItemsHandler.Unregister();
             _broadcast.Unregister();
             _noDoorsFor10.UnregisterEvents();
             _kill914.Unregister();
             _noElevatorFor939.UnregisterEvents();
             _scp096ElevatorRestriction.UnregisterEvents();
+            _teslaGate.Unregister();
+            _customRoleHandler.Unregister();
             FemurBreaker?.Unregister();
             FemurBreaker = null;
+            
             
             Debug.Log("RPF disabled");
             base.OnDisabled();
