@@ -2,7 +2,9 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using CommandSystem;
+using Exiled.API.Enums;
 using Exiled.API.Features;
+using Exiled.API.Features.Doors;
 using PlayerRoles;
 using UnityEngine;
 
@@ -14,11 +16,6 @@ namespace RPF.Commands.Client
         public bool Execute(ArraySegment<string> arguments, ICommandSender sender, [UnscopedRef] out string response)
         {
             var player = Player.Get(sender);
-            if (!_humanRoles.Contains(player.Role.Type))
-            {
-                response = "You Must be a human to run this command.";
-                return false;
-            }
             
             if (Main.Instance?.FemurBreaker == null)
             {
@@ -26,9 +23,17 @@ namespace RPF.Commands.Client
                 return false;
             }
             
+            string roomName = player.CurrentRoom.Name.ToLower();
+            if (!roomName.Contains("106"))
+            {
+                response = "You can Only do that in 106 room!";
+                return false;
+            }
+            
             response = "Running Femour Breaker...";
             _ = Main.Instance.FemurBreaker.RunFemurBreaker();
             Task.Run(Extetic);
+            
             return true;
         }
         

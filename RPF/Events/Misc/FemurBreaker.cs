@@ -173,7 +173,7 @@ namespace RPF.Events.Misc
 
             if (_config.OnlyHumansCanTrigger && (ev.Player.Role.Team == Team.SCPs || ev.Player.Role.Team == Team.Dead))
                 return;
-
+            
             if (!_isRunning)
                 _ = RunFemurBreaker();
         }
