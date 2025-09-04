@@ -1,6 +1,6 @@
 # RPFunctions Plugin.
 ![RPFBanner.jpg](./RPF/Images/RPFBanner.jpg)
-An new Exiled Plugin By Mr.Cat and FIXI50000 😉
+An new Exiled Plugin By Mr.Cat😉
 
 
 ## What this Plugin do?
