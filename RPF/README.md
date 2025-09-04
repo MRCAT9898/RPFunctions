@@ -1,7 +1,7 @@
 
 # RPFunctions Plugin.
 ![RPFBanner.jpg](./Images/RPFBanner.jpg)
-An new Exiled Plugin By Mr.Cat and FIXI50000 ;)
+An new Exiled Plugin By Mr.Cat;)
 
 
 ## What this Plugin do?
@@ -49,8 +49,6 @@ For support, email: sigmapurgatorium12@outlook.it or server Exiled.
 ## Authors:
 
 - [@MRCAT9898](https://www.github.com/MRCAT9898)
-- [@FIXI50000](https://www.github.com/FIXI50000)
-
 
 ## License
 

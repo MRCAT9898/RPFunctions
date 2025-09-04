@@ -36,7 +36,7 @@ namespace RPF
         public float HintDuration { get; } = 10f;
         
         public override string Name { get; } = "RPFunctions";
-        public override string Author { get; } = "Mr.Cat, FIXI50000";
+        public override string Author { get; } = "Mr.Cat";
         public override string Prefix { get; } = "RPF";
         public override Version Version { get; } = new Version(1, 3, 0);
         public override Version RequiredExiledVersion { get; } = new Version(9, 8, 1);
